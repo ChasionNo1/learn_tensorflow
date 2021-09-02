@@ -125,6 +125,7 @@ class LstmNode:
         # x 是 seed（0）的一组随机数，数量是50
         # h_prev是零向量，大小是100
         xc = np.hstack((x,  h_prev))
+        print('xc:', xc.shape)
         # 在水平方向上平铺, 要求维度一致
         '''
         [[1 4 5]
@@ -154,7 +155,7 @@ class LstmNode:
         o = sigmoid(wo*xc+bo)
         h = o * tanh(s)
         '''
-        # print('wg:', self.param.wg.shape)
+        print('wg:', self.param.wg.shape)
         self.state.g = np.tanh(np.dot(self.param.wg, xc) + self.param.bg)
         # print('state.g:', self.state.g.shape)
         self.state.i = sigmoid(np.dot(self.param.wi, xc) + self.param.bi)

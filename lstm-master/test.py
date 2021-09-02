@@ -39,7 +39,6 @@ def example_0():
     # 这行代码的意思是，生成一个array列表，array是大小为50的随机数组成，列表的长度有y_list的大小决定
     # 所以生成了四个array
     input_val_arr = [np.random.random(x_dim) for _ in y_list]
-    # print(input_val_arr)
     # 设置学习的次数为200
     for cur_iter in range(200):
         print("iter", "%2s" % str(cur_iter), end=": ")

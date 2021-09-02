@@ -55,8 +55,9 @@ def download(id, name):
     url = realurl['url']
     # print(url)
     download = requests.get(url=url)
-    mkdir(r'E:\MUSIC\kuwo')
-    with open(r'E:\MUSIC\kuwo\{0}.mp3'.format(file_name), 'wb') as f:
+    mkdir(r'D:\MUSIC\kuwo')
+    #
+    with open(r'D:\MUSIC\kuwo\{0}.mp3'.format(file_name), 'wb') as f:
         f.write(download.content)
     print('{}   下载完成!'.format(file_name))
 

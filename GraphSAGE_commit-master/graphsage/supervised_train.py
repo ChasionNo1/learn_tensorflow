@@ -282,7 +282,7 @@ def train(train_data, test_data=None):
             feed_dict, labels = minibatch.next_minibatch_feed_dict()
             feed_dict.update({placeholders['dropout']: FLAGS.dropout})  # 现在feed_dict里输出的节点有：dropout、batch_size、batch（样本点的集合）、labels
 
-            # LOG
+            # log
             # print("inputs1 shape", sess.run([model.shapelog],feed_dict=feed_dict))
             print("inputs:", sess.run([model.inputs1], feed_dict=feed_dict))
             print("samples0", sess.run([model.log0], feed_dict=feed_dict))
